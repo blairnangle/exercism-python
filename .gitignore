@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+.pytest_cache
+
+# Environments
+.venv
+
+# IntelliJ
+.idea
+
+# Project-specific Git commit message (to configure: git config commit.template .gitmessage)
+.gitmessage
