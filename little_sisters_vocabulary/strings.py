@@ -36,11 +36,13 @@ def make_word_groups(vocab_words):
 
     prefix = vocab_words[0]
 
-    return " :: ".join([prefix] + [add_prefix(prefix, word) for word in vocab_words[1:]])
+    return " :: ".join(
+        [prefix] + [add_prefix(prefix, word) for word in vocab_words[1:]]
+    )
 
 
 def replace_last_letter(word, new_letter):
-    return word[0:len(word) - 1] + new_letter
+    return word[0 : len(word) - 1] + new_letter
 
 
 def remove_suffix_ness(word):
@@ -53,7 +55,7 @@ def remove_suffix_ness(word):
     """
 
     length_of_word = len(word)
-    word_without_suffix = word[0:length_of_word - 4]
+    word_without_suffix = word[0 : length_of_word - 4]
     if word_without_suffix[len(word_without_suffix) - 1] == "i":
         return replace_last_letter(word_without_suffix, "y")
     else:

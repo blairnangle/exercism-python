@@ -1,7 +1,8 @@
 import unittest
 
 from pig_latin import (
-    translate, get_leading_consonant_sound,
+    translate,
+    get_leading_consonant_sound,
 )
 
 # Tests adapted from `problem-specifications//canonical-data.json`

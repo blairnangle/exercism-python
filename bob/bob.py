@@ -2,7 +2,7 @@ import re
 
 
 def is_shouting(hey_bob):
-    return re.sub(r'\W+', '', hey_bob).isupper()
+    return re.sub(r"\W+", "", hey_bob).isupper()
 
 
 def is_question(hey_bob):
@@ -10,7 +10,7 @@ def is_question(hey_bob):
 
 
 def response(hey_bob):
-    stripped = ''.join(hey_bob.split())
+    stripped = "".join(hey_bob.split())
     print(stripped)
     if is_shouting(stripped) and is_question(stripped):
         return "Calm down, I know what I'm doing!"

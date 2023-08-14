@@ -8,7 +8,7 @@ COLOR_TO_CODE = {
     "blue": 6,
     "violet": 7,
     "grey": 8,
-    "white": 9
+    "white": 9,
 }
 
 

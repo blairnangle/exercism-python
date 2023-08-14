@@ -29,7 +29,9 @@ def compare_records(azara_record, rui_record):
     :return: bool - do the coordinates match?
     """
 
-    return convert_coordinate(get_coordinate(azara_record)) == get_coordinate(rui_record)
+    return convert_coordinate(get_coordinate(azara_record)) == get_coordinate(
+        rui_record
+    )
 
 
 def create_record(azara_record, rui_record):

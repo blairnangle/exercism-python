@@ -1,12 +1,14 @@
 """Functions for compiling dishes and ingredients for a catering company."""
 
-from sets_categories_data import (VEGAN,
-                                  VEGETARIAN,
-                                  KETO,
-                                  PALEO,
-                                  OMNIVORE,
-                                  ALCOHOLS,
-                                  SPECIAL_INGREDIENTS)
+from sets_categories_data import (
+    VEGAN,
+    VEGETARIAN,
+    KETO,
+    PALEO,
+    OMNIVORE,
+    ALCOHOLS,
+    SPECIAL_INGREDIENTS,
+)
 
 
 def clean_ingredients(dish_name, dish_ingredients):
@@ -54,13 +56,25 @@ def categorize_dish(dish_name, dish_ingredients):
 
     """
 
-    if any(ingredient not in VEGETARIAN | PALEO | KETO | OMNIVORE for ingredient in dish_ingredients):
+    if any(
+        ingredient not in VEGETARIAN | PALEO | KETO | OMNIVORE
+        for ingredient in dish_ingredients
+    ):
         return f"{dish_name}: VEGAN"
-    if any(ingredient not in VEGAN | PALEO | KETO | OMNIVORE for ingredient in dish_ingredients):
+    if any(
+        ingredient not in VEGAN | PALEO | KETO | OMNIVORE
+        for ingredient in dish_ingredients
+    ):
         return f"{dish_name}: VEGETARIAN"
-    if any(ingredient not in VEGAN | VEGETARIAN | KETO | OMNIVORE for ingredient in dish_ingredients):
+    if any(
+        ingredient not in VEGAN | VEGETARIAN | KETO | OMNIVORE
+        for ingredient in dish_ingredients
+    ):
         return f"{dish_name}: PALEO"
-    if any(ingredient not in VEGAN | VEGETARIAN | PALEO | OMNIVORE for ingredient in dish_ingredients):
+    if any(
+        ingredient not in VEGAN | VEGETARIAN | PALEO | OMNIVORE
+        for ingredient in dish_ingredients
+    ):
         return f"{dish_name}: KETO"
 
     return f"{dish_name}: OMNIVORE"
@@ -77,7 +91,9 @@ def tag_special_ingredients(dish):
     SPECIAL_INGREDIENTS constant imported from `sets_categories_data.py`.
     """
 
-    return dish[0], set(filter(lambda ingredient: ingredient in SPECIAL_INGREDIENTS, dish[1]))
+    return dish[0], set(
+        filter(lambda ingredient: ingredient in SPECIAL_INGREDIENTS, dish[1])
+    )
 
 
 def compile_ingredients(dishes):
@@ -121,4 +137,9 @@ def singleton_ingredients(dishes, intersection):
     The function should return a `set` of ingredients that only appear in a single dish.
     """
 
-    return set(ingredient for dish in dishes for ingredient in dish if ingredient not in intersection)
+    return set(
+        ingredient
+        for dish in dishes
+        for ingredient in dish
+        if ingredient not in intersection
+    )

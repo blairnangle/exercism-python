@@ -57,7 +57,10 @@ def student_ranking(student_scores, student_names):
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
 
-    return [f"{student_names.index(score_name[1]) + 1}. {score_name[1]}: {score_name[0]}" for score_name in list(zip(student_scores, student_names))]
+    return [
+        f"{student_names.index(score_name[1]) + 1}. {score_name[1]}: {score_name[0]}"
+        for score_name in list(zip(student_scores, student_names))
+    ]
 
 
 def perfect_score(student_info):

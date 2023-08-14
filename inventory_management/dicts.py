@@ -31,7 +31,9 @@ def decrement_items(inventory, items):
     :return: dict - updated inventory with items decremented.
     """
 
-    return {item: max(0, inventory[item] - items.count(item)) for item in inventory.keys()}
+    return {
+        item: max(0, inventory[item] - items.count(item)) for item in inventory.keys()
+    }
 
 
 def remove_item(inventory, item):
@@ -42,7 +44,11 @@ def remove_item(inventory, item):
     :return: dict - updated inventory with item removed. Current inventory if item does not match.
     """
 
-    return {inventory_item: inventory[inventory_item] for inventory_item in inventory if inventory_item != item}
+    return {
+        inventory_item: inventory[inventory_item]
+        for inventory_item in inventory
+        if inventory_item != item
+    }
 
 
 def list_inventory(inventory):
@@ -52,4 +58,9 @@ def list_inventory(inventory):
     :return: list of tuples - list of key, value pairs from the inventory dictionary.
     """
 
-    return list(filter(lambda item_count: item_count[1] > 0, [(item, inventory[item]) for item in inventory]))
+    return list(
+        filter(
+            lambda item_count: item_count[1] > 0,
+            [(item, inventory[item]) for item in inventory],
+        )
+    )

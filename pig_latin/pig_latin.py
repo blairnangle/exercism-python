@@ -1,12 +1,6 @@
 import re
 
-VOWELS = {
-    "a",
-    "e",
-    "i",
-    "o",
-    "u"
-}
+VOWELS = {"a", "e", "i", "o", "u"}
 
 
 def match_leading_consonant_and_qu_sound(word):
@@ -36,13 +30,17 @@ def translate_word(word):
         return word + "ay"
     if match_leading_consonant_and_qu_sound(word):
         leading_consonant_and_qu_sound = get_leading_consonant_and_qu_sound(word)
-        return word[len(leading_consonant_and_qu_sound):] + leading_consonant_and_qu_sound + "ay"
+        return (
+            word[len(leading_consonant_and_qu_sound) :]
+            + leading_consonant_and_qu_sound
+            + "ay"
+        )
     if match_leading_consonant_and_y_sound(word):
         leading_consonant_sound = get_leading_consonant_sound_before_y(word)
-        return word[len(leading_consonant_sound):] + leading_consonant_sound + "ay"
+        return word[len(leading_consonant_sound) :] + leading_consonant_sound + "ay"
     else:
         leading_consonant_sound = get_leading_consonant_sound(word)
-        return word[len(leading_consonant_sound):] + leading_consonant_sound + "ay"
+        return word[len(leading_consonant_sound) :] + leading_consonant_sound + "ay"
 
 
 def translate(text):

@@ -50,7 +50,9 @@ def median(hand):
     hand_sorted = sorted(hand)
     hand_size = len(hand)
     if hand_size % 2 == 0:
-        return (hand_sorted[int(hand_size / 2 - 2)] + hand_sorted[int(hand_size / 2)]) / 2
+        return (
+            hand_sorted[int(hand_size / 2 - 2)] + hand_sorted[int(hand_size / 2)]
+        ) / 2
 
     return hand_sorted[int(hand_size / 2 - 0.5)]
 
@@ -92,6 +94,6 @@ def maybe_double_last(hand):
     hand_size = len(hand)
 
     if hand[hand_size - 1] == 11:
-        return hand[0:hand_size - 1] + [hand[hand_size - 1] * 2]
+        return hand[0 : hand_size - 1] + [hand[hand_size - 1] * 2]
 
     return hand

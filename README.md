@@ -9,7 +9,7 @@ See subdirectory READMEs for exercise instructions.
 * Create a virtual environment:
 
 ```shell
-python3 -m venv .venv
+python3 -m venv venv
 ```
 * Activate the virtual environment:
 

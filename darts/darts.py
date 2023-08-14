@@ -2,7 +2,7 @@ from math import sqrt
 
 
 def score(x, y):
-    distance_from_center = sqrt(x ** 2 + y ** 2)
+    distance_from_center = sqrt(x**2 + y**2)
     if 0 <= distance_from_center <= 1:
         return 10
     elif 1 < distance_from_center <= 5:

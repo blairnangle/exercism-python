@@ -59,7 +59,10 @@ def value_of_ace(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    if "A" in [card_one, card_two] or value_of_card(card_one) + value_of_card(card_two) > 10:
+    if (
+        "A" in [card_one, card_two]
+        or value_of_card(card_one) + value_of_card(card_two) > 10
+    ):
         return 1
     else:
         return 11
@@ -85,7 +88,9 @@ def is_blackjack(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    return (is_worth_ten(card_one) and is_ace(card_two)) or (is_ace(card_one) and is_worth_ten(card_two))
+    return (is_worth_ten(card_one) and is_ace(card_two)) or (
+        is_ace(card_one) and is_worth_ten(card_two)
+    )
 
 
 def can_split_pairs(card_one, card_two):
